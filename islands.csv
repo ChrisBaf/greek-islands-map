@@ -1,0 +1,234 @@
+Code,Island,Area (sq km), Population,Population (2011) ,Population (2001), Population (1991), Population (1981), Population (1971) ,Population (1961) ,Population (1951) ,Island complex
+1,Crete,8.336,624408,623065,601131,539634,502082,456471,483078,461652,Islands of Crete
+2,Euboea,3.655,189096,190552,19813,192667,176952,162986,160886,161205,Others
+3,Rhodes,"1.401,46",125113,11549,117007,98181,87831,66606,118099,11522,Dodecanese
+4,Corfu,"592,082",98127,102071,107879,104737,96761,89578,97412,100957,Ionian Islands
+5,Lesbos,1.636,83755,86312,90643,8714,88601,97008,117371,126924,Islands of the north Aegean
+6,Chios,"842,796",50361,51269,51936,51044,487,52487,60061,64672,Islands of the north Aegean
+7,Zante,"404,611",4118,43384,38957,32556,30011,3018,35499,38054,Ionian Islands
+8,Salamina,"94,993",3722,39283,38022,34272,28574,23065,21151,17738,Argosaronic islands
+9,Kos,"287,611",37089,33388,30947,26379,2035,1665,18187,19076,Dodecanese
+10,Cephalonia island,"781,482",36064,38082,36404,29344,27649,31787,3979,47363,Ionian Islands
+11,Samos,"477,942",32642,33335,33814,33039,31629,32664,41124,47865,Islands of the north Aegean
+12,Lefkada,"302,511",21518,2232,20751,1935,19947,22917,2697,28338,Ionian Islands
+13,Syros,"84,069",21124,21473,19782,1987,19668,18642,1957,2313,Cyclades
+14,Naxos,"429,785",19597,1834,18188,14838,14037,14201,16703,18593,Cyclades
+15,Kalymnos island,"110,581",17752,15863,16235,15706,14295,13097,14017,13387,Dodecanese
+16,Lemnos,"476,288",16411,16743,18104,17645,15721,17367,21808,24016,Islands of the north Aegean
+17,Santorini,"76,19",15231,1743,13402,936,7083,6196,7751,9332,Cyclades
+18,Paros,"196,308",1452,13694,12853,9591,7881,6776,783,9022,Cyclades
+19,Thassos,379,13104,14678,13765,13527,13111,13316,15916,15208,Islands of the north Aegean
+20,Aegina,"82,639",12911,1293,13552,11639,11127,9553,8958,8859,Argosaronic islands
+21,Mykonos,"86,125",10704,10134,9306,617,5503,3823,3633,3391,Cyclades
+22,Tinos,"194,59",8934,8699,8574,7747,773,8232,9273,10187,Cyclades
+23,Ikaria,"255,32",8843,8431,8312,7546,7559,7702,9577,10608,Islands of the north Aegean
+24,Andros,"379,21",8826,9128,10009,8781,902,10457,12928,14705,Cyclades
+25,Leros island,"54,052",7992,7915,8123,8059,8127,8494,6611,7049,Dodecanese
+26,Karpathos,"300,152",6567,6709,6489,5323,4645,542,6689,7053,Dodecanese
+27,Skiathos,"47,325",5802,6088,616,5096,4127,3901,3177,3309,Northern Sporades
+28,Milos island,151,5302,4966,4771,439,4554,4499,491,5586,Cyclades
+29,Skopelos,"95,131",4518,496,4696,4658,4451,4476,5154,5672,Northern Sporades
+30,Spetses,"22,239",3748,3934,3908,3592,3708,3445,3326,3166,Argosaronic islands
+31,Kythera,"279,593",3605,3897,331,2951,3354,3961,534,6297,Ionian Islands
+32,Patmos island,"34,142",3283,3429,2984,2663,2534,2432,2564,2613,Dodecanese
+33,Poros,"22,646",3261,3951,4348,357,3929,4265,4422,4141,Argosaronic islands
+34,Alonissos,"64,118",3138,2766,2672,298,1528,1426,1308,1341,Northern Sporades
+35,Skyros,"206,926",3052,2994,2602,2901,2757,2352,2882,3193,Northern Sporades
+36,Ithaca,"96,262",2862,3231,3084,3082,3646,4156,521,583,Ionian Islands
+37,Sifnos,"73,942",2777,2543,2442,196,2087,2043,2258,2773,Cyclades
+38,Symi,"57,865",2603,3068,2606,2332,2273,2489,3123,3978,Dodecanese
+39,Samothrace,"178,0",2596,2773,2723,3083,2871,3012,383,4258,Islands of the north Aegean
+40,Paxos,"25,322",2466,2373,2374,2175,2247,2227,2599,2668,Ionian Islands
+41,Kea,"131,693",2335,2472,2417,1787,1648,1666,2361,3108,Cyclades
+42,Ios,"108,713",2299,2084,1838,1654,1451,127,1343,1753,Cyclades
+43,Hydra,"49,592",207,1951,2672,2379,2723,2531,2766,2807,Argosaronic islands
+44,Amorgos,"121,464",1961,1947,1859,163,1718,1822,2096,2505,Cyclades
+45,Kythnos,"99,432",1568,1436,1608,1632,1502,1586,2064,2536,Cyclades
+46,Astypalea,"96,42",1376,127,1238,1073,103,1139,1539,1797,Dodecanese
+47,Fourni island,"30,5",1343,1199,1314,1224,1184,1195,117,1105,Islands of the north Aegean
+48,Antiparos,"35,09",1265,1196,1037,819,635,538,631,680,Cyclades
+49,Serifos,"75,207",1241,1378,1414,1095,1133,1083,1878,1851,Cyclades
+50,Kasos,"66,419",1223,107,990,1088,1184,1353,1422,1388,Dodecanese
+51,Agistri,"11,693",1131,1099,920,791,766,635,618,654,Argosaronic islands
+52,Nisyros,"41,263",1048,982,938,913,916,1253,1788,2327,Dodecanese
+53,Meganisi,"22,356",926,983,109,1245,1339,1653,1996,212,Ionian Islands
+54,Oinousses,"14,382",911,796,105,681,703,966,158,1433,Islands of the north Aegean
+55,Elafonisos,"19,992",898,977,745,725,611,586,530,567,Ionian Islands
+56,Kimolos island,"37,426",810,899,769,728,786,1086,1412,1536,Cyclades
+57,Lipsi island,"15,842",778,784,698,606,574,597,724,885,Dodecanese
+58,Tilos,"61,487",746,829,533,279,301,349,789,1052,Dodecanese
+59,Folegandros,"32,384",719,787,667,558,567,646,778,862,Cyclades
+60,Kastelorizo,"9,113",584,496,406,275,222,264,476,574,Dodecanese
+61,Ammouliani,"7,730",521,569,547,606,499,445,554,636,Others
+62,Chalki,"26,988",475,478,313,281,334,387,501,580,Dodecanese
+63,Erikousa,"4,449",447,506,698,334,228,358,514,499,Ionian Islands
+64,Psara,"40,467",420,408,422,438,460,487,576,700,Islands of the north Aegean
+65,Pano Koufonisi island,"5,77",391,412,366,275,232,238,277,282,Cyclades
+66,Othonoi,"10,078",386,558,663,98,164,418,637,683,Ionian Islands
+67,Kalamos island,"24,964",342,529,543,465,502,687,1084,1172,Ionian Islands
+68,Anafi,"38,636",293,271,273,261,292,353,471,532,Cyclades
+69,Agios Efstratios,"43,325",257,249,371,286,296,422,1061,3849,Islands of the north Aegean
+70,Sikinos,"41,676",253,270,238,267,290,331,453,590,Cyclades
+71,Thirassia,"9,246",249,322,268,233,245,291,399,501,Cyclades
+72,Schinoussa island,"8,144",229,225,206,122,140,197,196,226,Cyclades
+73,Donousa,"13,652",213,176,163,111,116,149,210,272,Cyclades
+74,Agathonisi,"13,417",202,186,158,112,133,160,189,196,Dodecanese
+75,Mathraki,"3,532",174,329,297,143,177,240,383,325,Ionian Islands
+76,Iraklia island,"18,078",148,150,151,115,95,129,155,189,Cyclades
+77,Gavdos,"29,585",142,158,95,115,79,142,172,195,Islands of Crete
+78,Thymena island,"10,071",136,142,152,156,140,139,145,118,Islands of the north Aegean
+79,Telendos,"4,648",94,111,54,57,90,76,75,92,Dodecanese
+80,Trizonia,"2,450",112,86,156,137,177,113,157,288,Others
+81,Kastos island,"5,901",40,79,120,50,68,103,197,258,Ionian Islands
+82,Pserimos,"14,615",79,77,130,79,72,108,157,233,Dodecanese
+83,Paleo Trikeri,"2,475",77,70,87,91,67,40,80,613,Others
+84,Antikythera,"20,43",39,59,44,70,115,141,178,210,Ionian Islands
+85,Arkioi,"6,697",44,43,54,50,68,46,97,92,Dodecanese
+86,Saria,"20,429",0,39,22,0,4,13,18,16,Dodecanese
+87,Peristera,"14,25",0,30,5,3,15,23,66,53,Northern Sporades
+88,Delos,"3,536",0,24,14,9,16,16,38,27,Cyclades
+89,Kalolimnos,"1,92",0,21,20,0,0,0,0,0,Dodecanese
+90,Giali,"4,558",0,21,10,16,66,32,7,0,Dodecanese
+91,Antipaxoi,"4,099",0,20,64,61,126,26,79,96,Ionian Islands
+92,Dokos,"12,505",0,17,43,8,9,7,28,36,Argosaronic islands
+93,Farmakonisi,"3,866",0,10,74,0,1,6,8,6,Dodecanese
+94,Makronissos,"18,427",0,8,5,0,4,12,12,4484,Cyclades
+95,Piperi,"4,228",0,6,2,0,0,0,11,14,Northern Sporades
+96,Marathi (or Maratha),"0,355",0,5,6,2,5,8,21,26,Dodecanese
+97,Samiopoula,"1,018",0,4,5,7,5,7,4,12,Islands of the north Aegean
+98,Antipsara,"4,498",0,4,0,0,0,0,0,3,Islands of the north Aegean
+99,Kato Antikeri (or Drima),"1,079",0,3,1,2,4,0,0,0,Cyclades
+100,Agios Minas Fournos,"2,343",0,2,3,0,2,2,2,1,Islands of the north Aegean
+101,Kyra Panagia,"24,76",0,2,10,1,7,14,69,20,Northern Sporades
+102,Polyaigos,"18,146",0,2,0,0,1,4,6,14,Cyclades
+103,Sapienza,"9,1",0,2,7,4,3,0,11,3,Islands of the north Aegean
+104,Chrisi,"4,743",0,2,3,1,2,0,0,7,Islands of Crete
+105,Plati Kalymnos (or Platy),"0,726",0,1,2,0,0,0,0,0,Dodecanese
+106,Skorpios,"0,878",0,1,2,1,7,7,4,7,Ionian Islands
+107,Stamphani Strophadens,"2,531",0,1,58,1,3,7,10,8,Ionian Islands
+108,Gyaros,"17,574",0,0,0,0,0,2,244,7139,Cyclades
+109,Megalonisos Petalion,"17,2",0,0,0,0,4,6,18,61,Others
+110,Keros,"15,042",0,0,0,0,0,7,8,2,Cyclades
+111,Rinia,"13,904",0,0,0,0,11,24,47,128,Cyclades
+112,Schiza,"12,301",0,0,2,0,0,0,0,0,Islands of the north Aegean
+113,Dia,"11,909",0,0,0,0,0,0,0,0,Islands of Crete
+114,Yura,"11,052",0,0,0,1,2,2,1,0,Northern Sporades
+115,Levitha,"9,121",0,0,8,0,4,9,7,8,Dodecanese
+116,Antimelos,"8,0",0,0,0,0,0,0,0,0,Cyclades
+117,Sirna,"7,868",0,0,0,0,4,7,19,8,Dodecanese
+118,Despotiko,"7,754",0,0,0,0,0,0,0,0,Cyclades
+119,Alimia,"7,427",0,0,0,0,0,0,22,41,Dodecanese
+120,Skandzura,"6,229",0,0,0,0,0,1,5,11,Northern Sporades
+121,Petalas,"5,497",0,0,0,0,0,3,3,6,Ionian Islands
+122,Nimos,"4,648",0,0,0,0,0,6,0,18,Dodecanese
+123,Kinaros,"4,577",0,1,2,2,4,3,0,12,Dodecanese
+124,Atokos,"4,375",0,0,0,0,1,0,3,3,Ionian Islands
+125,Valaxa,"4,333",0,0,0,0,0,0,0,0,Northern Sporades
+126,Agios Georgios Hydra,"4,329",0,0,0,0,0,0,0,0,Argosaronic islands
+127,Arkoudi,"4,275",0,0,0,0,0,0,6,0,Ionian Islands
+128,Koufonisi Lasithiou,"4,26",0,0,0,0,0,0,0,1,Islands of Crete
+129,Oxia,"4,223",0,0,0,0,1,0,9,3,Ionian Islands
+130,Kato Koufonisi,"3,898",0,0,0,0,5,6,15,16,Cyclades
+131,Chersonisi Petalion,"3,833",0,0,0,4,1,6,11,21,Others
+132,Skyropoula,"3,827",0,0,0,0,0,0,0,0,Northern Sporades
+133,Nea Kameni,"3,338",0,0,0,0,0,0,0,0,Cyclades
+134,Sarakino,"3,337",0,0,0,0,0,0,0,0,Northern Sporades
+135,Diaporos,"3,2",0,0,0,2,0,0,0,0,Others
+136,Sfaktiria,"3,150",0,0,0,0,0,0,0,20,Others
+137,Proti,"3,050",0,0,4,0,0,0,0,0,Others
+138,Dragonada,"2,892",0,0,0,0,0,0,0,0,Islands of Crete
+139,Patroklos,"2,8",0,0,0,0,0,0,0,0,Argosaronic islands
+140,Armathia,"2,567",0,0,0,0,0,0,0,8,Dodecanese
+141,Drakonera,"2,442",0,0,0,0,0,2,3,2,Ionian Islands
+142,Pasas,"2,414",0,0,0,5,2,8,6,15,Islands of the north Aegean
+143,Psili Argolida,"2,1",0,0,0,0,0,0,0,0,Argosaronic islands
+144,Gianisida,"2,098",0,0,0,0,0,0,0,0,Islands of Crete
+145,Gavdopoula,"2,0",0,0,3,0,0,0,0,0,Islands of Crete
+146,Spetsopoula,"1,956",0,0,8,11,18,19,47,6,Argosaronic islands
+147,Ofidoussa,"1,94",0,0,0,0,0,0,0,0,Dodecanese
+148,Cavalliani,"1,925",0,0,0,0,0,0,0,0,Others
+149,Velopoula,"1,85",0,0,0,0,3,5,5,0,Argosaronic islands
+150,Seskli,"1,835",0,0,0,0,0,2,3,7,Dodecanese
+151,Platia Argolidas,"1,80",0,0,7,0,0,0,0,0,Argosaronic islands
+152,Serifopoula,"1,75",0,0,0,0,0,0,0,0,Cyclades
+153,Elasa,"1,746",0,0,0,0,0,0,0,0,Islands of Crete
+154,Stira,"1,70",0,0,0,0,0,0,0,0,Others
+155,Strogili Antiparou,"1,638",0,0,0,0,0,0,0,0,Cyclades
+156,Archangelos Lerou,"1,608",0,0,0,0,0,0,0,0,Dodecanese
+157,Romvi Argolidas,"1,60",0,0,0,0,0,0,0,0,Argosaronic islands
+158,Psira,"1,518",0,0,0,0,0,0,0,0,Islands of Crete
+159,Ro,"1,476",0,0,15,0,0,0,1,3,Dodecanese
+160,Kounoupi,"1,457",0,0,0,0,0,0,0,2,Dodecanese
+161,Kardiotisa,"1,43",0,0,0,0,0,0,0,0,Cyclades
+162,Fleves,"1,4",0,0,0,0,0,0,0,0,Argosaronic islands
+163,Kondeliousa,"1,363",0,0,0,0,2,4,5,0,Dodecanese
+164,Moni,"1,350",0,0,0,0,0,0,0,0,Argosaronic islands
+165,Argelousa,"1,328",0,0,0,0,0,0,0,0,Dodecanese
+166,Falkonera,"1,30",0,0,0,0,0,0,0,0,Argosaronic islands
+167,Zaforas,"1,281",0,0,0,0,0,0,0,0,Dodecanese
+168,Provati,"1,21",0,0,0,0,0,0,6,1,Ionian Islands
+169,Anidros Thyras,"1,20",0,0,0,0,0,0,0,0,Cyclades
+170,Christiani,"1,188",0,0,0,0,0,0,0,0,Cyclades
+171,Pachia Nisyrou,"1,184",0,0,0,0,0,0,0,0,Dodecanese
+172,Tsougria,"1,173",0,0,0,2,0,3,5,12,Northern Sporades
+173,Pergousa,"1,169",0,0,0,0,0,0,0,0,Dodecanese
+174,Ano Antikeri,"1,077",0,0,0,0,0,0,0,0,Cyclades
+175,Bromonas,"1,047",0,0,0,0,0,0,0,3,Ionian Islands
+176,Adelfi Alonissou,"1,027",0,0,11,0,0,0,1,0,Northern Sporades
+177,Strogili Megistis,"1,025",0,0,9,0,0,4,4,7,Dodecanese
+178,Trikeri Hydra,"1,000",0,0,4,0,0,0,0,0,Argosaronic islands
+179,Astakida,"0,984",0,0,0,0,0,0,0,0,Dodecanese
+180,Makri Echinades,"0,983",0,0,0,0,0,4,3,3,Ionian Islands
+181,Pontikousa,"0,982",0,0,0,0,0,0,0,0,Dodecanese
+182,Agios Nikolaos Makaron,"0,912",0,0,0,0,0,0,0,0,Cyclades
+183,Agios Thomas Aegina,"0,900",0,0,0,0,0,0,0,0,Argosaronic islands
+184,Agios Ioannis Aegina,"0,850",0,0,0,0,0,0,0,0,Argosaronic islands
+185,Prasso Iouron,"0,843",0,0,0,0,0,0,0,0,Northern Sporades
+186,Agria Gamvousa,"0,825",0,0,0,0,0,0,0,0,Islands of Crete
+187,Kythros,"0,814",0,0,0,0,0,0,0,0,Ionian Islands
+188,Gaidaros Megalou Choriou Tilos,"0,802",0,0,0,0,0,0,0,0,Dodecanese
+189,Kyra Agistriou,"0,800",0,0,0,0,0,0,0,0,Argosaronic islands
+190,Arsida,"0,800",0,0,0,0,0,0,0,0,Argosaronic islands
+191,Psathura,"0,763",0,0,0,0,2,5,6,7,Northern Sporades
+192,Citriani,"0,750",0,0,0,0,0,0,0,0,Cyclades
+193,Pontikos Echinadon,"0,736",0,0,0,0,0,0,0,0,Ionian Islands
+194,Imeri Gramvousa,"0,722",0,0,0,0,0,0,0,0,Islands of Crete
+195,Karlonisi,"0,719",0,0,0,0,0,0,0,0,Ionian Islands
+196,Lechousa Alonisou,"0,688",0,0,0,0,0,0,0,0,Northern Sporades
+197,Kisiria,"0,662",0,0,0,0,0,0,0,0,Islands of the north Aegean
+198,Agios Theodoros Chalkis,"0,651",0,0,0,0,0,0,0,0,Dodecanese
+199,Makronisi Fournon,"0,647",0,0,0,0,0,0,0,0,Islands of the north Aegean
+200,Ofidoussa Schinoussa,"0,630",0,0,0,0,0,0,0,0,Cyclades
+201,Platy Skyrou (or Platia),"0,619",0,0,0,0,0,0,0,0,Northern Sporades
+202,Makri Rhodes,"0,581",0,0,0,0,0,0,0,0,Dodecanese
+203,Megalo Fokionisi,"0,569",0,0,0,0,0,0,0,0,Dodecanese
+204,Anthropofas Fournon,"0,545",0,0,0,0,0,0,0,0,Islands of the north Aegean
+205,Sparti Lefkadas,"0,538",0,0,0,0,0,4,8,12,Ionian Islands
+206,Rinia Skyrou,"0,533",0,0,0,0,0,0,0,0,Northern Sporades
+207,Palea Kameni,"0,525",0,0,0,0,0,0,0,0,Cyclades
+208,Plakida Astypalaias,"0,514",0,0,0,0,0,0,0,0,Dodecanese
+209,Antitelos of Tilos,"0,510",0,0,0,0,0,0,0,0,Dodecanese
+210,Kutsomyti Astypalea,"0,459",0,0,0,0,0,0,0,0,Dodecanese
+211,Nera Kalymnou,"0,456",0,0,0,0,0,0,0,0,Dodecanese
+212,Elafonisi Chania,"0,435",0,0,0,0,0,0,0,0,Islands of Crete
+213,Nera Agathonisiou,"0,433",0,0,0,0,0,0,0,0,Dodecanese
+214,Hamili Karpathou,"0,429",0,0,0,0,0,0,0,0,Dodecanese
+215,Agios Georgios Alonissou,"0,417",0,0,0,0,0,0,3,0,Northern Sporades
+216,Mesonisi Astypalaia,"0,416",0,0,0,0,0,0,0,0,Dodecanese
+217,Arko Skiathos,"0,414",0,0,0,0,0,0,0,0,Northern Sporades
+218,Thymeinaki,"0,412",0,0,0,0,0,0,0,0,Islands of the north Aegean
+219,Adelfopoulo Alonissou,"0,391",0,0,0,0,0,0,0,0,Northern Sporades
+220,Chondro Astypalea,"0,387",0,0,0,0,0,0,0,0,Dodecanese
+221,Tragonissi Patmos,"0,379",0,0,0,0,0,0,0,0,Dodecanese
+222,Peganoussa Leros,"0,376",0,0,0,0,0,0,0,0,Dodecanese
+223,Psyttalia,"0,375",0,0,0,0,0,96,80,74,Argosaronic islands
+224,Strogilo Makaron,"0,354",0,0,0,0,0,0,0,0,Cyclades
+225,Lambrinos Echinades,"0,352",0,0,0,0,0,0,0,0,Ionian Islands
+226,Dasia Skopelou,"0,34",0,0,0,0,0,0,1,0,Northern Sporades
+227,Paksimada Lasithiou,"0,311",0,0,0,0,0,0,0,0,Islands of Crete
+228,Diaplo of Mathrakion,"0,31",0,0,0,0,0,0,0,0,Ionian Islands
+229,Koulouri Skyrou (or Koulouri),"0,285",0,0,0,0,0,0,0,0,Northern Sporades
+230,Prasso Skandzouras,"0,262",0,0,0,0,0,0,0,0,Northern Sporades
+231,Modi of Echinacea,"0,258",0,0,0,0,0,0,0,0,Ionian Islands
+232,Askania Thira,"0,257",0,0,0,0,0,0,0,0,Cyclades
+233,Kalogiros of Echinades,"0,249",0,0,0,0,0,0,0,0,Ionian Islands

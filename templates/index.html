@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Visited Greek Islands</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+    <style>
+        :root {
+            --ink: #0b2a4a;
+            --muted: #4f6b86;
+            --blue: #1d6fb8;
+            --blue-dark: #14558f;
+            --track: #dcecf7;
+            --green: #2e9e5b;
+        }
+        * { box-sizing: border-box; }
+        body {
+            margin: 0;
+            font-family: -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            color: var(--ink);
+            background-color: #e3f2fb;
+            background-image: linear-gradient(180deg, #d9eefa 0%, #eaf6fc 45%, #d3e9f6 100%);
+            min-height: 100vh;
+        }
+        .page {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 18px 14px 48px;
+        }
+        h1 {
+            text-align: center;
+            color: #0a3d78;
+            font-size: clamp(1.6rem, 5vw, 2.4rem);
+            margin: 10px 0 6px;
+        }
+        .footnote {
+            text-align: center;
+            font-style: italic;
+            font-size: 14px;
+            color: var(--muted);
+            margin: 4px 0;
+        }
+        .footnote.hint { color: var(--green); font-weight: 600; font-style: normal; }
+        .card {
+            background: #fff;
+            border-radius: 16px;
+            box-shadow: 0 4px 18px rgba(20, 85, 143, 0.12);
+            padding: 14px;
+            margin-top: 16px;
+        }
+        .card h2 {
+            margin: 0 0 10px;
+            font-size: 1.15rem;
+            color: #0a3d78;
+        }
+        #map {
+            width: 100%;
+            height: 70vh;
+            min-height: 420px;
+            border-radius: 12px;
+        }
+
+        /* Overall progress */
+        .overall { text-align: center; }
+        .big-number { font-size: 2.6rem; font-weight: 700; color: var(--blue-dark); line-height: 1.1; }
+        #counter { color: var(--muted); font-size: 15px; margin-top: 4px; }
+
+        /* Progress bars (overall + per area) */
+        .bar { height: 12px; background: var(--track); border-radius: 999px; overflow: hidden; }
+        .bar > span {
+            display: block;
+            height: 100%;
+            width: 0;
+            background: linear-gradient(90deg, #3a9be0, var(--blue));
+            border-radius: 999px;
+            transition: width 0.4s ease;
+        }
+        .overall .bar { margin: 12px auto 0; max-width: 520px; }
+
+        .regions-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 14px 24px;
+        }
+        .region-top {
+            display: flex;
+            justify-content: space-between;
+            gap: 8px;
+            font-size: 14px;
+            margin-bottom: 5px;
+        }
+        .region-top .name { font-weight: 600; }
+        .region-top .nums { color: var(--muted); white-space: nowrap; }
+
+        /* Island lists */
+        .lists-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+        }
+        .lists-container .card { margin-top: 16px; }
+        .lists-container ul {
+            margin: 0;
+            padding-left: 20px;
+            max-height: 260px;
+            overflow-y: auto;
+        }
+        .lists-container li { padding: 2px 0; }
+
+        /* Buttons */
+        .button-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 22px;
+        }
+        .button-container.secondary-row { margin-top: 10px; }
+        button {
+            padding: 12px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border: none;
+            border-radius: 999px;
+            background: var(--blue);
+            color: #fff;
+            box-shadow: 0 2px 8px rgba(20, 85, 143, 0.25);
+            transition: background 0.15s ease, transform 0.05s ease;
+        }
+        button:hover { background: var(--blue-dark); }
+        button:active { transform: scale(0.98); }
+        button.secondary {
+            background: #fff;
+            color: var(--blue-dark);
+            border: 1.5px solid var(--blue);
+            box-shadow: none;
+        }
+        button.secondary:hover { background: #eef7fd; }
+
+        #nextDestination { text-align: center; margin-top: 16px; }
+        #nextDestination .card { display: inline-block; padding: 12px 28px; }
+        #nextDestination h2 { margin-bottom: 4px; }
+        #nextDestination p { margin: 0; font-size: 1.3rem; font-weight: 700; color: var(--blue-dark); }
+
+        /* Footer */
+        footer {
+            display: grid;
+            grid-template-columns: 1fr auto 1fr;
+            align-items: center;
+            margin-top: 40px;
+            padding-top: 14px;
+            border-top: 1px solid rgba(20, 85, 143, 0.2);
+            font-size: 13px;
+            color: var(--muted);
+        }
+        footer .credit { text-align: right; }
+        footer .support { text-align: left; color: var(--blue-dark); text-decoration: none; font-weight: 600; }
+        footer .support:hover { text-decoration: underline; }
+        .share-message {
+            text-align: center;
+            min-height: 22px;
+            margin-top: 12px;
+            font-size: 14px;
+            color: var(--green);
+            font-weight: 600;
+        }
+
+        /* Phones */
+        @media (max-width: 640px) {
+            .page { padding: 12px 10px 36px; }
+            #map { height: 58vh; min-height: 360px; }
+            .lists-container { grid-template-columns: 1fr; gap: 0; }
+            .big-number { font-size: 2.2rem; }
+            .button-container.main-row button { flex: 1 1 100%; }
+            .button-container.secondary-row { flex-wrap: nowrap; }
+            .button-container.secondary-row button { flex: 1 1 auto; padding: 12px 8px; font-size: 15px; }
+            footer { grid-template-columns: 1fr; text-align: center; gap: 4px; }
+            footer .spacer { display: none; }
+            footer .credit { text-align: center; }
+            footer .support { text-align: center; order: 3; }
+        }
+    </style>
+    <!--
+      CLOUDFLARE WEB ANALYTICS:
+      After creating a site in Cloudflare Web Analytics, paste the site-specific
+      beacon script provided by Cloudflare here (before </head>).
+      Analytics will not be active until you add that script.
+    -->
+</head>
+<body>
+    <div class="page">
+        <h1>Visited Greek Islands Map</h1>
+        <div class="footnote">Inhabited/Touristic Greek Islands (2021 population census)</div>
+        <div class="footnote">You can check how many Greek touristic islands (out of the <span id="totalIslands">85</span>) you have visited</div>
+        <div class="footnote hint">Click the islands you have visited on the map</div>
+
+        <div class="card">
+            <div id="map"></div>
+        </div>
+
+        <div class="card overall">
+            <div class="big-number" id="percentageNumber">0.00%</div>
+            <div>of Greek islands visited</div>
+            <div class="bar"><span id="overallBar"></span></div>
+            <div id="counter"></div>
+        </div>
+
+        <div class="card">
+            <h2>Progress by island group</h2>
+            <div class="regions-grid" id="regions"></div>
+        </div>
+
+        <div class="lists-container">
+            <div class="card" id="notVisitedList">
+                <h2>List of Islands</h2>
+                <ul id="notVisited"></ul>
+            </div>
+            <div class="card" id="visitedList">
+                <h2>Visited Islands</h2>
+                <ul id="visited"></ul>
+            </div>
+        </div>
+
+        <div id="nextDestination"></div>
+
+        <div class="button-container main-row">
+            <button id="randomIslandButton">Click to find your next destination</button>
+        </div>
+        <div class="button-container secondary-row">
+            <button id="shareButton" class="secondary">Share</button>
+            <button id="resetButton" class="secondary">Reset</button>
+            <button id="downloadMapButton" class="secondary">Download Map</button>
+        </div>
+
+        <div id="shareMessage" class="share-message" role="status" aria-live="polite"></div>
+
+        <footer>
+            {% if support_url %}
+            <a class="support" href="{{ support_url }}" target="_blank" rel="noopener">Support me on thx.so</a>
+            {% else %}
+            <span class="spacer"></span>
+            {% endif %}
+            <span>&copy; 2026 All rights reserved</span>
+            <span class="credit">Created by ChrisBaf</span>
+        </footer>
+    </div>
+
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            var map = L.map('map').setView([39.0742, 21.8243], 6);
+            var markers = {};
+            var stats = { visited: 0, total: 85 };
+
+            var defaultIcon = L.icon({
+                iconUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/images/marker-icon.png',
+                iconSize: [25, 41],
+                iconAnchor: [12, 41],
+                popupAnchor: [1, -34],
+                shadowSize: [41, 41]
+            });
+            var visitedIcon = L.icon({
+                iconUrl: 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-green.png',
+                iconSize: [25, 41],
+                iconAnchor: [12, 41],
+                popupAnchor: [1, -34],
+                shadowSize: [41, 41]
+            });
+
+            // Add base map layer
+            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                maxZoom: 19,
+                attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+            }).addTo(map);
+
+            function cleanName(island) {
+                return island.replace(", Greece", "");
+            }
+
+            function listHtml(islands) {
+                return islands.map(cleanName).sort().map(function(name) {
+                    return '<li>' + name + '</li>';
+                }).join('');
+            }
+
+            // Function to update visited islands list
+            function updateVisitedList() {
+                $.get('/visited', function(data) {
+                    $('#visited').html(listHtml(data.visited_islands));
+                });
+            }
+
+            // Function to update not visited islands list
+            function updateNotVisitedList() {
+                $.get('/not_visited', function(data) {
+                    $('#notVisited').html(listHtml(data.not_visited_islands));
+                });
+            }
+
+            // Function to update the overall percentage and counter
+            function updatePercentage() {
+                $.get('/percentage', function(data) {
+                    var pct = data.percentage_visited;
+                    $('#percentageNumber').text(pct.toFixed(2) + '%');
+                    $('#overallBar').css('width', pct + '%');
+                    $('#totalIslands').text(data.total_islands);
+                    stats.visited = data.visited_count;
+                    stats.total = data.total_islands;
+                    $('#counter').text('You have visited ' + data.visited_count + ' out of ' +
+                                       data.total_islands + ' inhabited islands');
+                });
+            }
+
+            // Function to update the progress of each island group
+            function updateRegions() {
+                $.get('/regions', function(data) {
+                    $('#regions').html(data.regions.map(function(r) {
+                        return '<div>' +
+                            '<div class="region-top"><span class="name">' + r.name + '</span>' +
+                            '<span class="nums">' + r.visited + ' / ' + r.total +
+                            ' &middot; ' + Math.round(r.percentage) + '%</span></div>' +
+                            '<div class="bar"><span style="width:' + r.percentage + '%"></span></div>' +
+                            '</div>';
+                    }).join(''));
+                });
+            }
+
+            function refreshStats() {
+                updateVisitedList();
+                updateNotVisitedList();
+                updatePercentage();
+                updateRegions();
+            }
+
+            // Toggle visited / not visited when a marker is clicked
+            function toggleIsland(marker) {
+                var islandName = marker.options.title;
+                var current = markers[islandName];
+                var url = current.isVisited ? '/unvisit' : '/visit';
+                $.ajax({
+                    url: url,
+                    type: 'POST',
+                    contentType: 'application/json',
+                    data: JSON.stringify({ lat: marker.getLatLng().lat, lng: marker.getLatLng().lng }),
+                    success: function() {
+                        current.isVisited = !current.isVisited;
+                        marker.setIcon(current.isVisited ? visitedIcon : defaultIcon);
+                        refreshStats();
+                    },
+                    error: function(error) {
+                        console.error('Error updating island:', islandName, error);
+                    }
+                });
+            }
+
+            // Function to load islands and add markers
+            function loadIslands() {
+                $.get('/islands', function(islands) {
+                    for (var island in islands) {
+                        var marker = L.marker(islands[island], {
+                            title: island,
+                            icon: defaultIcon
+                        }).addTo(map);
+                        markers[island] = { marker: marker, isVisited: false };
+                        marker.on('click', function(e) {
+                            toggleIsland(e.target);
+                        });
+                    }
+                }).fail(function(jqXHR, textStatus, errorThrown) {
+                    console.error('Error loading islands:', textStatus, errorThrown);
+                });
+            }
+
+            // Initialize map and load islands on page load
+            loadIslands();
+            refreshStats();
+
+            // Reset visited islands button click handler
+            $('#resetButton').click(function() {
+                $.ajax({
+                    url: '/reset',
+                    type: 'POST',
+                    success: function() {
+                        Object.values(markers).forEach(function(markerData) {
+                            markerData.isVisited = false;
+                            markerData.marker.setIcon(defaultIcon);
+                        });
+                        refreshStats();
+                        $('#nextDestination').html('');
+                    },
+                    error: function(error) {
+                        console.error('Error resetting visited islands:', error);
+                    }
+                });
+            });
+
+            // Fetch random island button click handler
+            $('#randomIslandButton').click(function() {
+                $.get('/random_island', function(data) {
+                    $('#nextDestination').html(
+                        '<div class="card"><h2>Which is your next destination?</h2><p>' +
+                        cleanName(data.random_island) + '</p></div>');
+                });
+            });
+
+            // Share button: native share sheet on phones, copy-to-clipboard on computers
+            var shareTimer;
+            function showShareMessage(text) {
+                $('#shareMessage').text(text);
+                clearTimeout(shareTimer);
+                shareTimer = setTimeout(function() { $('#shareMessage').text(''); }, 4000);
+            }
+
+            function shareText() {
+                if (stats.visited === 0) {
+                    return 'How many of the ' + stats.total + ' inhabited Greek islands have you visited? Mark them on this map:';
+                }
+                var pct = Math.round(stats.visited / stats.total * 100);
+                return 'I have visited ' + stats.visited + ' of the ' + stats.total +
+                       ' inhabited Greek islands (' + pct + '%). How many have you visited?';
+            }
+
+            $('#shareButton').click(function() {
+                var url = window.location.href.split('#')[0];
+                var text = shareText();
+                if (navigator.share) {
+                    navigator.share({ title: 'Visited Greek Islands Map', text: text, url: url })
+                        .catch(function() { /* the person closed the share sheet - nothing to do */ });
+                } else if (navigator.clipboard && navigator.clipboard.writeText) {
+                    navigator.clipboard.writeText(text + ' ' + url).then(function() {
+                        showShareMessage('Copied! Paste it anywhere to share.');
+                    }, function() {
+                        window.prompt('Copy this and share it:', text + ' ' + url);
+                    });
+                } else {
+                    window.prompt('Copy this and share it:', text + ' ' + url);
+                }
+            });
+
+            // Download map button click handler
+            $('#downloadMapButton').click(function() {
+                html2canvas(document.getElementById('map'), {
+                    useCORS: true,
+                    allowTaint: false
+                }).then(function(canvas) {
+                    var link = document.createElement('a');
+                    link.href = canvas.toDataURL('image/png');
+                    link.download = 'visited_greek_islands_map.png';
+                    link.click();
+                }).catch(function(error) {
+                    console.error('Error capturing map:', error);
+                });
+            });
+        });
+    </script>
+</body>
+</html>

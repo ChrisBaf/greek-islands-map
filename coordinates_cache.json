@@ -1,0 +1,342 @@
+{
+  "Crete, Greece": [
+    35.3084952,
+    24.4633423
+  ],
+  "Euboea, Greece": [
+    38.4941724,
+    23.9110844
+  ],
+  "Rhodes, Greece": [
+    36.1725297,
+    27.9194016
+  ],
+  "Corfu, Greece": [
+    39.591337,
+    19.8596189
+  ],
+  "Lesbos, Greece": [
+    39.1758419,
+    25.9989135
+  ],
+  "Chios, Greece": [
+    38.3758132,
+    26.0646552
+  ],
+  "Zante, Greece": [
+    37.7891384,
+    20.7900896
+  ],
+  "Salamina, Greece": [
+    37.9383706,
+    23.5083736
+  ],
+  "Kos, Greece": [
+    36.7936933,
+    27.0848266
+  ],
+  "Cephalonia island, Greece": [
+    38.2660322,
+    20.5373903
+  ],
+  "Samos, Greece": [
+    37.7246162,
+    26.8192919
+  ],
+  "Lefkada, Greece": [
+    38.7065734,
+    20.6416779
+  ],
+  "Syros, Greece": [
+    37.4385101,
+    24.9123772
+  ],
+  "Naxos, Greece": [
+    37.0600105,
+    25.4707567
+  ],
+  "Kalymnos island, Greece": [
+    37.0025735,
+    26.9923072
+  ],
+  "Lemnos, Greece": [
+    39.9088688,
+    25.1499608
+  ],
+  "Santorini, Greece": [
+    36.4071112,
+    25.4566637
+  ],
+  "Paros, Greece": [
+    37.0870636,
+    25.1509969
+  ],
+  "Thassos, Greece": [
+    40.6844479,
+    24.6512064
+  ],
+  "Aegina, Greece": [
+    37.7243694,
+    23.4938109
+  ],
+  "Mykonos, Greece": [
+    37.4513937,
+    25.3923149
+  ],
+  "Tinos, Greece": [
+    37.6017133,
+    25.1540218
+  ],
+  "Ikaria, Greece": [
+    37.5999295,
+    26.1516894
+  ],
+  "Andros, Greece": [
+    37.8408347,
+    24.8623824
+  ],
+  "Leros island, Greece": [
+    37.1493635,
+    26.8463817
+  ],
+  "Karpathos, Greece": [
+    35.6136611,
+    27.1192567
+  ],
+  "Skiathos, Greece": [
+    39.1692985,
+    23.4552513
+  ],
+  "Milos island, Greece": [
+    36.7093441,
+    24.5068338
+  ],
+  "Skopelos, Greece": [
+    39.1401737,
+    23.681376
+  ],
+  "Spetses, Greece": [
+    37.2586958,
+    23.1397191
+  ],
+  "Kythera, Greece": [
+    36.2580288,
+    23.0024352
+  ],
+  "Patmos island, Greece": [
+    37.3247471,
+    26.5381556
+  ],
+  "Poros, Greece": [
+    37.5269211,
+    23.4752454
+  ],
+  "Alonissos, Greece": [
+    39.2123073,
+    23.9093931
+  ],
+  "Skyros, Greece": [
+    38.8730436,
+    24.5244774
+  ],
+  "Ithaca, Greece": [
+    38.4018961,
+    20.6700929
+  ],
+  "Sifnos, Greece": [
+    36.9714014,
+    24.7081104
+  ],
+  "Symi, Greece": [
+    36.5904011,
+    27.8411975
+  ],
+  "Samothrace, Greece": [
+    40.4511544,
+    25.5856572
+  ],
+  "Paxos, Greece": [
+    39.2093982,
+    20.1616339
+  ],
+  "Kea, Greece": [
+    37.6048603,
+    24.3274958
+  ],
+  "Ios, Greece": [
+    36.7173241,
+    25.3331121
+  ],
+  "Hydra, Greece": [
+    37.3321076,
+    23.4664237
+  ],
+  "Amorgos, Greece": [
+    36.8525242,
+    25.898487
+  ],
+  "Kythnos, Greece": [
+    37.3912235,
+    24.4260276
+  ],
+  "Astypalea, Greece": [
+    36.5760811,
+    26.3029291
+  ],
+  "Fourni island, Greece": [
+    37.5911772,
+    26.5127233
+  ],
+  "Antiparos, Greece": [
+    36.9943528,
+    25.0482082
+  ],
+  "Serifos, Greece": [
+    37.159401,
+    24.4735202
+  ],
+  "Kasos, Greece": [
+    35.3872275,
+    26.9117454
+  ],
+  "Agistri, Greece": [
+    37.6937039,
+    23.3500523
+  ],
+  "Nisyros, Greece": [
+    36.5890457,
+    27.169184
+  ],
+  "Meganisi, Greece": [
+    38.6345417,
+    20.7472835
+  ],
+  "Oinousses, Greece": [
+    38.5235706,
+    26.2274072
+  ],
+  "Elafonisos, Greece": [
+    36.4836016,
+    22.9589842
+  ],
+  "Kimolos island, Greece": [
+    36.8093128,
+    24.5561036
+  ],
+  "Lipsi island, Greece": [
+    37.3014716,
+    26.7554281
+  ],
+  "Tilos, Greece": [
+    36.4293005,
+    27.3163394
+  ],
+  "Folegandros, Greece": [
+    36.6298023,
+    24.9144281
+  ],
+  "Kastelorizo, Greece": [
+    36.1438108,
+    29.5873555
+  ],
+  "Ammouliani, Greece": [
+    40.3250346,
+    23.9096439
+  ],
+  "Chalki, Greece": [
+    36.2227925,
+    27.611466
+  ],
+  "Erikousa, Greece": [
+    39.8803641,
+    19.5807849
+  ],
+  "Psara, Greece": [
+    38.5707386,
+    25.5855023
+  ],
+  "Pano Koufonisi island, Greece": [
+    36.9411763,
+    25.607493
+  ],
+  "Othonoi, Greece": [
+    39.8522652,
+    19.3956834
+  ],
+  "Kalamos island, Greece": [
+    38.6158072,
+    20.9010154
+  ],
+  "Anafi, Greece": [
+    36.3734437,
+    25.7772854
+  ],
+  "Agios Efstratios, Greece": [
+    39.5122717,
+    25.0062338
+  ],
+  "Sikinos, Greece": [
+    36.6755538,
+    25.1162326
+  ],
+  "Thirassia, Greece": [
+    36.4339362,
+    25.3361087
+  ],
+  "Schinoussa island, Greece": [
+    36.8729817,
+    25.5177684
+  ],
+  "Donousa, Greece": [
+    37.1115678,
+    25.8083431
+  ],
+  "Agathonisi, Greece": [
+    37.4604562,
+    26.9676675
+  ],
+  "Mathraki, Greece": [
+    39.7710566,
+    19.5207778
+  ],
+  "Iraklia island, Greece": [
+    36.8452959,
+    25.4561758
+  ],
+  "Gavdos, Greece": [
+    34.8366595,
+    24.0832149
+  ],
+  "Thymena island, Greece": [
+    37.582959,
+    26.4294106
+  ],
+  "Telendos, Greece": [
+    37.0038947,
+    26.9133804
+  ],
+  "Trizonia, Greece": [
+    38.3660684,
+    22.070359
+  ],
+  "Kastos island, Greece": [
+    38.5726957,
+    20.9121466
+  ],
+  "Pserimos, Greece": [
+    36.9395904,
+    27.1400718
+  ],
+  "Paleo Trikeri, Greece": [
+    39.1600001,
+    23.0797524
+  ],
+  "Antikythera, Greece": [
+    35.8644182,
+    23.3037898
+  ],
+  "Arkioi, Greece": [
+    37.383889,
+    26.7392467
+  ]
+}

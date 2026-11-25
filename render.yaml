@@ -1,0 +1,12 @@
+services:
+  - type: web
+    name: greek-islands-map
+    runtime: python
+    plan: free
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn app:app
+    envVars:
+      - key: SECRET_KEY
+        generateValue: true
+      - key: SUPPORT_URL
+        value: https://thx.so/chrisbaf/support
