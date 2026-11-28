@@ -1,4 +1,4 @@
-from flask import Flask, render_template, jsonify, request, session
+from flask import Flask, render_template, jsonify, request, session, Response
 import os
 import random
 from coordinates import coordinates
@@ -16,6 +16,23 @@ SUPPORT_URL = os.environ.get('SUPPORT_URL', 'https://thx.so/chrisbaf/support')
 @app.route('/google634bedc0b5fefe6d.html')
 def google_site_verification():
     return 'google-site-verification: google634bedc0b5fefe6d.html', 200, {'Content-Type': 'text/html; charset=utf-8'}
+
+# Sitemap helps search engines discover the public homepage.
+@app.route('/sitemap.xml')
+def sitemap():
+    xml = '''<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://greek-islands-map.onrender.com/</loc>
+  </url>
+</urlset>'''
+    return Response(xml, mimetype='application/xml')
+
+# Allow search engines to crawl the public site and point them to the sitemap.
+@app.route('/robots.txt')
+def robots_txt():
+    content = 'User-agent: *\nAllow: /\nSitemap: https://greek-islands-map.onrender.com/sitemap.xml\n'
+    return Response(content, mimetype='text/plain')
 
 greece_center = [39.0742, 21.8243]
 all_islands = set(coordinates.keys())
