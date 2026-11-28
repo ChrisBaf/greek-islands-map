@@ -37,7 +37,10 @@ for row in inhabited_islands:
 @app.route('/')
 def index():
     session.clear()
-    session['visited_islands'] = []
+    # If someone opens a shared link, restore the islands selected by the sender.
+    # Only accept island names that exist in the official coordinates list.
+    shared_islands = request.args.getlist('visited')
+    session['visited_islands'] = [island for island in shared_islands if island in all_islands]
     return render_template('index.html', support_url=SUPPORT_URL)
 
 
