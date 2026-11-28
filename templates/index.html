@@ -42,6 +42,13 @@
             margin: 4px 0;
         }
         .footnote.hint { color: var(--green); font-weight: 600; font-style: normal; }
+        .definition-note {
+            text-align: left;
+            margin: 14px 0 0;
+            font-size: 13px;
+            line-height: 1.5;
+            color: var(--muted);
+        }
         .card {
             background: #fff;
             border-radius: 16px;
@@ -191,8 +198,8 @@
 <body>
     <div class="page">
         <h1>Visited Greek Islands Map</h1>
-        <div class="footnote">Inhabited/Touristic Greek Islands (2021 population census)</div>
-        <div class="footnote">You can check how many Greek touristic islands (out of the <span id="totalIslands">85</span>) you have visited</div>
+        <div class="footnote">Inhabited/Touristic Greek Islands (2021 population census)*</div>
+        <div class="footnote">You can check how many Greek islands (out of the <span id="totalIslands">85</span>) you have visited</div>
         <div class="footnote hint">Click the islands you have visited on the map</div>
 
         <div class="card">
@@ -234,6 +241,10 @@
         </div>
 
         <div id="shareMessage" class="share-message" role="status" aria-live="polite"></div>
+
+        <div class="footnote definition-note">
+            *This list includes Greek islands with more than 20 inhabitants (according to the 2021 population census) that have tourist accommodation, restaurants, and shops.
+        </div>
 
         <footer>
             {% if support_url %}
@@ -335,6 +346,18 @@
                 updateRegions();
             }
 
+            // Keep the current selection in the URL so it can be shared with others.
+            function updateShareUrl() {
+                var url = new URL(window.location.href);
+                url.searchParams.delete('visited');
+                Object.keys(markers).forEach(function(islandName) {
+                    if (markers[islandName].isVisited) {
+                        url.searchParams.append('visited', islandName);
+                    }
+                });
+                window.history.replaceState({}, '', url.toString());
+            }
+
             // Toggle visited / not visited when a marker is clicked
             function toggleIsland(marker) {
                 var islandName = marker.options.title;
@@ -348,6 +371,7 @@
                     success: function() {
                         current.isVisited = !current.isVisited;
                         marker.setIcon(current.isVisited ? visitedIcon : defaultIcon);
+                        updateShareUrl();
                         refreshStats();
                     },
                     error: function(error) {
@@ -369,6 +393,15 @@
                             toggleIsland(e.target);
                         });
                     }
+                    // Restore the visited markers when the page is opened from a shared link.
+                    $.get('/visited', function(data) {
+                        data.visited_islands.forEach(function(islandName) {
+                            if (markers[islandName]) {
+                                markers[islandName].isVisited = true;
+                                markers[islandName].marker.setIcon(visitedIcon);
+                            }
+                        });
+                    });
                 }).fail(function(jqXHR, textStatus, errorThrown) {
                     console.error('Error loading islands:', textStatus, errorThrown);
                 });
@@ -388,6 +421,7 @@
                             markerData.isVisited = false;
                             markerData.marker.setIcon(defaultIcon);
                         });
+                        updateShareUrl();
                         refreshStats();
                         $('#nextDestination').html('');
                     },
@@ -416,14 +450,16 @@
 
             function shareText() {
                 if (stats.visited === 0) {
-                    return 'How many of the ' + stats.total + ' inhabited Greek islands have you visited? Mark them on this map:';
+                    return 'Look at how many Greek islands I have visited! Open my map and mark the islands you have visited too:';
                 }
                 var pct = Math.round(stats.visited / stats.total * 100);
-                return 'I have visited ' + stats.visited + ' of the ' + stats.total +
-                       ' inhabited Greek islands (' + pct + '%). How many have you visited?';
+                return 'Look at how many Greek islands I have visited! ' +
+                       stats.visited + ' out of ' + stats.total + ' (' + pct +
+                       '%). Open my map and mark the islands you have visited too:';
             }
 
             $('#shareButton').click(function() {
+                updateShareUrl();
                 var url = window.location.href.split('#')[0];
                 var text = shareText();
                 if (navigator.share) {
