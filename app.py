@@ -12,6 +12,11 @@ app.secret_key = os.environ.get('SECRET_KEY', 'local-development-key')
 # Override this in Render if your support page changes.
 SUPPORT_URL = os.environ.get('SUPPORT_URL', 'https://thx.so/chrisbaf/support')
 
+# Google Search Console HTML-file ownership verification.
+@app.route('/google634bedc0b5fefe6d.html')
+def google_site_verification():
+    return 'google-site-verification: google634bedc0b5fefe6d.html', 200, {'Content-Type': 'text/html; charset=utf-8'}
+
 greece_center = [39.0742, 21.8243]
 all_islands = set(coordinates.keys())
 
